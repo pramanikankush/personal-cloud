@@ -1,0 +1,178 @@
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-50: #f0f9ff;
+        --primary-100: #e0f2fe;
+        --primary-200: #bae6fd;
+        --primary-300: #7dd3fc;
+        --primary-400: #38bdf8;
+        --primary-500: #0ea5e9;
+        --primary-600: #0284c7;
+        --primary-700: #0369a1;
+        --primary-800: #075985;
+        --primary-900: #0c4a6e;
+      }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+<div class="flex min-h-screen">
+<aside class="w-64 bg-gray-900 p-6 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-10">
+<div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white"> all_inbox </span>
+</div>
+<h1 class="text-xl font-bold">CloudVault</h1>
+</div>
+<nav class="flex flex-col gap-4">
+<a class="flex items-center gap-3 text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined"> home </span>
+              Home
+            </a>
+<a class="flex items-center gap-3 text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined"> photo_library </span>
+              Photos
+            </a>
+<a class="flex items-center gap-3 text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined"> movie </span>
+              Videos
+            </a>
+<a class="flex items-center gap-3 text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined"> description </span>
+              Documents
+            </a>
+</nav>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBTa-D-qG-5ZdTwzV-8TE3Um1VEAGH9LvpjxcaFhm2n59Nu5vNkbQ5pXrsQbXsyW8t7_JgHDevEqtQ1syql0qSV0XF0-iLxpUTCOeSCAkwK_tEV7Raq-oqP-ulE17gvGd01d45ec0v8pP2aKskxTA9rIjnvBBaosVFDUAaQjdQuwr8rPSmN_qX_FLU0qCyftasXqAepmb4ee6wpUny0Gn36Dmo-OiK7F6szeUo_YZda5VTZKmWoyzkzg4eYr3AknbRWUU9KE6AjOxbS");'></div>
+<div>
+<p class="font-semibold">Jane Doe</p>
+<p class="text-sm text-gray-400">jane.doe@example.com</p>
+</div>
+</div>
+</aside>
+<main class="flex-1">
+<header class="sticky top-0 z-10 flex h-16 shrink-0 items-center justify-between border-b border-gray-800 bg-gray-900/50 backdrop-blur-lg px-8">
+<div class="flex items-center gap-4">
+<h2 class="text-2xl font-bold tracking-tight">Explore Files</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"> search </span>
+<input class="w-full bg-gray-800 border-none rounded-md pl-10 pr-4 py-2 text-white placeholder-gray-400 focus:ring-2 focus:ring-primary-500 focus:outline-none" placeholder="Search files, tags..." type="text"/>
+</div>
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined"> help </span>
+</button>
+</div>
+</header>
+<div class="p-8">
+<div class="mb-6">
+<div class="flex items-center gap-4 mb-4">
+<h3 class="text-lg font-semibold">Filters</h3>
+<div class="flex-1 border-t border-gray-800"></div>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 transition-colors">
+<span>File Type</span>
+<span class="material-symbols-outlined text-base"> expand_more </span>
+</button>
+<button class="flex items-center gap-2 rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 transition-colors">
+<span>Date</span>
+<span class="material-symbols-outlined text-base"> expand_more </span>
+</button>
+<button class="flex items-center gap-2 rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 transition-colors">
+<span>Tags</span>
+<span class="material-symbols-outlined text-base"> expand_more </span>
+</button>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-semibold">Search Results</h3>
+<div class="text-sm text-gray-400">Showing 1-12 of 248 results</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+<div class="group relative">
+<div class="aspect-square w-full overflow-hidden rounded-lg bg-gray-800">
+<img alt="Document 1" class="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu_dAZCbI3EcePZ3j0UDRMqqTgJZTdaodavpSe21eE3EKfR9VcLFVKkS8WY8x0qU6xM9plK-y7OA6H4JU1cB0s46OofZZAkyraFfOPmwoRt0XGMjtUUxreX3kADUd-5Xqr_WpX7Vc2u_RZjlihMzVl1yFVzbIdVqFFygz1vF9gyL9ephIKhDs4YF61KjMk5r5kQDjqflNu3QgSpQDJzavA35Xl_2vpSA-zolSHgg_pOBsRJb2JNk-re_P23R84TGfaqDne1ZiiAhHR"/>
+</div>
+<div class="mt-2">
+<h4 class="text-sm font-medium">Document 1</h4>
+<p class="text-xs text-gray-400">Document</p>
+</div>
+</div>
+<div class="group relative">
+<div class="aspect-square w-full overflow-hidden rounded-lg bg-gray-800">
+<img alt="Image 1" class="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoafPCifeAybtGQhwPAIe90EtrFwCiqgnjf2cFTRjqzjp3Gx5DbLajmim9_0_DwR9DuhgiHKAv434uYQ1w_SFw7OExoWF1FEBR4Smd1VewtllwaRLRCjNJePVKOkGlteQq7vGJoAY9IwIXNhemEqDt_-gyjVQh4Dzlu7276D20KMthzwAXg1V4lq0UVCW1qlZIIHh8EV9hKoUFgw7BCZfpU_uFofmg4ApCz2GPu6wJVY59gygZS0DKYM0Xrj4KIgT_5phiiq4aqVyK"/>
+</div>
+<div class="mt-2">
+<h4 class="text-sm font-medium">Image 1</h4>
+<p class="text-xs text-gray-400">Image</p>
+</div>
+</div>
+<div class="group relative">
+<div class="aspect-square w-full overflow-hidden rounded-lg bg-gray-800">
+<img alt="Video 1" class="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYoT7FQhJ-m8pIM3cI_oV7JXhgPEm09D_--IDqLhbh2YAkUhFGVYEGph8ROrpSJGhKNg74_Sl5f9G2HGKljCKUpSBd0YfL4_PCSv6juFOX6YYDWBliVXSNBDYpQxQkM3EYQsNbpq5niq0oN8z9DXiq7doe4R_3GQG59wKsTzCXFrc6AB9TYZJC0Yhf_1XJFdtg0SOWRom4FyDWFYlHSrVKFakkxYeFnivdkxy2tPMNk-fBLsXP5rLqfHTUE5OlQ7Ck292-OLGpL03U"/>
+</div>
+<div class="mt-2">
+<h4 class="text-sm font-medium">Video 1</h4>
+<p class="text-xs text-gray-400">Video</p>
+</div>
+</div>
+<div class="group relative">
+<div class="aspect-square w-full overflow-hidden rounded-lg bg-gray-800">
+<img alt="Presentation 1" class="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU4RlFrualt8B8cVU2Z8gZjdK7lqLBDzlHA41QdExTg785HNLZisfzuqKCeBi1-6GswBgQctXSeY1wAopr_YDYCzy4Cb6ujn_jy1EcsWGu63xwVsNF4n10uHSBUKyk8zg6sIhLgRej1nS_qFHmhGQfTVg7kv3phP13VCkfuB3S31q9FfZz1dy_leM7fSaTv22dKJtnRJlYYBn7l-HpAV-JumJKg-r9w1XZeOEvmmWCv38Pb1KokRqo6lrJMfxiSsQfto93KIYExzKb"/>
+</div>
+<div class="mt-2">
+<h4 class="text-sm font-medium">Presentation 1</h4>
+<p class="text-xs text-gray-400">Presentation</p>
+</div>
+</div>
+<div class="group relative">
+<div class="aspect-square w-full overflow-hidden rounded-lg bg-gray-800">
+<img alt="Spreadsheet 1" class="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7G_08oP5rAKcRawRmJn71Stptdivko2HPWW5zjOSrQxS16g_qpRi8PWcyf6gIcTNpl_Jm8_GuPogbSd34nCQW0nmTvZ7zZdW_5NB-0BtAF48ldwprtdmxiiqTHLABdIr7Q-GAiKk3ZzKQI6UsYL1yIoOm9FVVeb3n14jCzT4ShQiwhAjk0_5PSYxSaXO_l8W1Gsve5kbKDdA-2ByLCg9K8VhUGbM821IEBKL4vkGu8wBElDYMV28bzXQ8b2Nj-pUr4eOnBDpWYrR9"/>
+</div>
+<div class="mt-2">
+<h4 class="text-sm font-medium">Spreadsheet 1</h4>
+<p class="text-xs text-gray-400">Spreadsheet</p>
+</div>
+</div>
+<div class="group relative">
+<div class="aspect-square w-full overflow-hidden rounded-lg bg-gray-800">
+<img alt="Audio 1" class="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVOa9aXv5ilkaow13jH1beBaTZ9-ye1xXSTK83ts9-DyXpvrHm62eI2TeAiWoQ3QuzYbLsoxRJ5rQ84L873TrLxdV-HkVemim_F4BnZ248qtJz7rs3M43Hiobw1zS8mQwKRBysJd4_r0YRNgp5ChCQUuiWh6mvd8JFkcDW2sp4JO8OCtrC9ndfS5PKEnWNE65Ld6XlJB10bROed19J5tah1A1gCGHGUeS7s2ptCSCxa1dU0bfFUbg_LXDacGlDMR7gx1XQW8S6k2no"/>
+</div>
+<div class="mt-2">
+<h4 class="text-sm font-medium">Audio 1</h4>
+<p class="text-xs text-gray-400">Audio</p>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-center">
+<nav class="flex items-center gap-2">
+<a class="flex h-9 w-9 items-center justify-center rounded-md bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined"> chevron_left </span>
+</a>
+<a class="flex h-9 w-9 items-center justify-center rounded-md bg-primary-500 text-white font-semibold" href="#">1</a>
+<a class="flex h-9 w-9 items-center justify-center rounded-md text-gray-400 hover:bg-gray-800 hover:text-white transition-colors" href="#">2</a>
+<a class="flex h-9 w-9 items-center justify-center rounded-md text-gray-400 hover:bg-gray-800 hover:text-white transition-colors" href="#">3</a>
+<span class="text-gray-500">...</span>
+<a class="flex h-9 w-9 items-center justify-center rounded-md text-gray-400 hover:bg-gray-800 hover:text-white transition-colors" href="#">21</a>
+<a class="flex h-9 w-9 items-center justify-center rounded-md bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined"> chevron_right </span>
+</a>
+</nav>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
