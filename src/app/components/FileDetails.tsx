@@ -63,14 +63,21 @@ export default function FileDetails() {
         })
       });
       
-      if (response.ok) {
-        const { summary } = await response.json();
-        const updatedFile = { ...file, summary };
-        setSelectedFile(updatedFile);
-        setFiles(prev => prev.map(f => f.id === file.id ? updatedFile : f));
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
+        console.error('API Error:', response.status, errorData);
+        throw new Error(`API Error: ${response.status} - ${errorData.error || 'Unknown error'}`);
       }
+      
+      const { summary } = await response.json();
+      const updatedFile = { ...file, summary };
+      setSelectedFile(updatedFile);
+      setFiles(prev => prev.map(f => f.id === file.id ? updatedFile : f));
     } catch (error) {
       console.error('Error generating summary:', error);
+      const updatedFile = { ...file, summary: 'Summary generation failed. Please try again later.' };
+      setSelectedFile(updatedFile);
+      setFiles(prev => prev.map(f => f.id === file.id ? updatedFile : f));
     } finally {
       setLoadingSummary(false);
     }

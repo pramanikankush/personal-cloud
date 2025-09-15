@@ -10,6 +10,14 @@ const supabase = createClient(
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if API key is configured
+    if (!process.env.GOOGLE_API_KEY) {
+      return NextResponse.json(
+        { error: 'Google API key not configured' },
+        { status: 500 }
+      );
+    }
+
     const { fileName, fileType, storagePath } = await request.json();
     
     const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
