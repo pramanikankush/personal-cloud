@@ -2,8 +2,7 @@
 
 A modern, AI-powered personal cloud storage solution built with Next.js, featuring intelligent file organization, secure authentication, and seamless payment integration.
 
-## 🎥 Demo
-https://drive.google.com/file/d/10-kntCcTGv-ANaIOZX7NYriMtptTcKri/view?usp=sharing
+## 🎥 Demo : (https://personal-cloud-two.vercel.app/)
 ## ✨ Features
 
 - **🔐 Secure Authentication** - User authentication powered by Clerk
