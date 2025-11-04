@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useUser, SignInButton, UserButton } from '@clerk/nextjs';
 
 interface SidebarProps {
@@ -8,9 +7,27 @@ interface SidebarProps {
   setCurrentView: (view: string) => void;
 }
 
+interface RazorpayOptions {
+  key: string;
+  amount: number;
+  currency: string;
+  name: string;
+  description: string;
+  handler: (response: { razorpay_payment_id: string }) => void;
+  prefill: {
+    name: string;
+    email: string;
+  };
+  theme: {
+    color: string;
+  };
+}
+
 declare global {
   interface Window {
-    Razorpay: any;
+    Razorpay: new (options: RazorpayOptions) => {
+      open: () => void;
+    };
   }
 }
 
@@ -18,13 +35,13 @@ export default function Sidebar({ currentView, setCurrentView }: SidebarProps) {
   const { isSignedIn, user } = useUser();
 
   const handlePayment = () => {
-    const options = {
-      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+    const options: RazorpayOptions = {
+      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || '',
       amount: 99900, // ₹999 in paise
       currency: 'INR',
       name: 'Personal Cloud',
       description: 'Upgrade Storage Plan',
-      handler: function (response: any) {
+      handler: function (response: { razorpay_payment_id: string }) {
         alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
       },
       prefill: {

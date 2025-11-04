@@ -31,7 +31,7 @@ export default function Upload() {
       const fileName = `${user.id}/${Date.now()}-${sanitizedName}`;
       
       try {
-        const { data: uploadData, error: uploadError } = await supabase.storage
+        const { error: uploadError } = await supabase.storage
           .from('files')
           .upload(fileName, file);
 
@@ -74,9 +74,7 @@ export default function Upload() {
     }
   };
 
-  const handleFileSelect = () => {
-    fileInputRef.current?.click();
-  };
+
 
   return (
     <main className="flex-1 bg-slate-900 text-white flex justify-center px-4 py-12 sm:px-6 lg:px-8">
