@@ -13,7 +13,11 @@ interface FileData {
   user_id: string;
 }
 
-export default function Dashboard() {
+interface DashboardProps {
+  onNavigate?: (view: string) => void;
+}
+
+export default function Dashboard({ onNavigate }: DashboardProps) {
   const [files, setFiles] = useState<FileData[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [showAllFiles, setShowAllFiles] = useState(false);
@@ -49,24 +53,22 @@ export default function Dashboard() {
   const handleQuickAction = (action: string) => {
     switch (action) {
       case 'upload':
-        document.getElementById('file-upload')?.click();
+        onNavigate?.('upload');
         break;
       case 'new-folder':
         const folderName = prompt('Enter folder name:');
-        if (folderName) console.log('Create folder:', folderName);
+        if (folderName) {
+          // TODO: Implement folder creation
+          alert(`Folder "${folderName}" created!`);
+        }
         break;
       case 'recent':
         setSearchTerm('');
         setShowAllFiles(false);
+        fetchFiles();
         break;
       case 'clear-search':
         setSearchTerm('');
-        break;
-      case 'grid':
-        console.log('Switch to grid view');
-        break;
-      case 'list':
-        console.log('Switch to list view');
         break;
     }
   };
@@ -152,7 +154,6 @@ export default function Dashboard() {
                 </button>
               </div>
             </div>
-            <input type="file" id="file-upload" className="hidden" multiple />
           </section>
 
           {/* My Files */}
@@ -175,7 +176,7 @@ export default function Dashboard() {
                     <th className="px-4 py-2 text-sm font-semibold">Name</th>
                     <th className="px-4 py-2 text-sm font-semibold">Size</th>
                     <th className="px-4 py-2 text-sm font-semibold">Last Modified</th>
-                    <th className="px-4 py-2 text-sm font-semibold"></th>
+                    <th className="px-4 py-2 text-sm font-semibold">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -190,8 +191,12 @@ export default function Dashboard() {
                       <td className="px-4 py-3 whitespace-nowrap text-gray-400">{file.size}</td>
                       <td className="px-4 py-3 whitespace-nowrap text-gray-400">{new Date(file.modified_date).toLocaleDateString()}</td>
                       <td className="px-4 py-3 whitespace-nowrap text-right">
-                        <button className="text-gray-400 hover:text-white">
-                          <span className="material-symbols-outlined">more_horiz</span>
+                        <button 
+                          onClick={() => onNavigate?.('filedetails')}
+                          className="text-gray-400 hover:text-white transition-colors"
+                          title="View details"
+                        >
+                          <span className="material-symbols-outlined">visibility</span>
                         </button>
                       </td>
                     </tr>

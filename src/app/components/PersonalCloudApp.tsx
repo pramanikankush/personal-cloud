@@ -7,6 +7,7 @@ import Dashboard from './Dashboard';
 import AITaggingSearch from './AITaggingSearch';
 import FileDetails from './FileDetails';
 import Upload from './Upload';
+import Upgrade from './Upgrade';
 
 export default function PersonalCloudApp() {
   const [currentView, setCurrentView] = useState('dashboard');
@@ -15,15 +16,17 @@ export default function PersonalCloudApp() {
   const renderView = () => {
     switch (currentView) {
       case 'dashboard':
-        return <Dashboard />;
+        return <Dashboard onNavigate={setCurrentView} />;
       case 'search':
         return <AITaggingSearch />;
       case 'filedetails':
         return <FileDetails />;
       case 'upload':
         return <Upload />;
+      case 'upgrade':
+        return <Upgrade />;
       default:
-        return <Dashboard />;
+        return <Dashboard onNavigate={setCurrentView} />;
     }
   };
 

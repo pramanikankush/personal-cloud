@@ -136,6 +136,17 @@ export default function Sidebar({ currentView, setCurrentView }: SidebarProps) {
             <span className="material-symbols-outlined">upload</span>
             <span>Upload</span>
           </button>
+          <button
+            onClick={() => setCurrentView('upgrade')}
+            className={`flex items-center gap-3 px-3 py-2 rounded-md font-medium transition-colors ${
+              currentView === 'upgrade' 
+                ? 'bg-gray-700/50 text-white' 
+                : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+            }`}
+          >
+            <span className="material-symbols-outlined">upgrade</span>
+            <span>Upgrade</span>
+          </button>
         </nav>
       </div>
 
@@ -146,10 +157,10 @@ export default function Sidebar({ currentView, setCurrentView }: SidebarProps) {
             <h3 className="font-semibold mb-2">Upgrade Storage</h3>
             <p className="text-sm text-gray-400 mb-4">Get more space for your files.</p>
             <button 
-              onClick={handlePayment}
+              onClick={() => setCurrentView('upgrade')}
               className="w-full bg-primary-600 text-white py-2 rounded-md hover:bg-primary-700 transition-colors"
             >
-              Upgrade Now
+              View Plans
             </button>
           </div>
         )}

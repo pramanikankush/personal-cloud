@@ -49,7 +49,7 @@ export default function FileDetails() {
   };
 
   const generateSummary = async (file: FileData) => {
-    if (file.summary) return;
+    if (file.summary || !file.name) return;
     
     setLoadingSummary(true);
     try {
@@ -58,15 +58,13 @@ export default function FileDetails() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
           fileName: file.name, 
-          fileType: file.type,
+          fileType: file.type || 'unknown',
           storagePath: file.storage_path 
         })
       });
       
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
-        console.error('API Error:', response.status, errorData);
-        throw new Error(`API Error: ${response.status} - ${errorData.error || 'Unknown error'}`);
+        throw new Error(`API Error: ${response.status}`);
       }
       
       const { summary } = await response.json();
@@ -74,8 +72,7 @@ export default function FileDetails() {
       setSelectedFile(updatedFile);
       setFiles(prev => prev.map(f => f.id === file.id ? updatedFile : f));
     } catch (error) {
-      console.error('Error generating summary:', error);
-      const updatedFile = { ...file, summary: 'Summary generation failed. Please try again later.' };
+      const updatedFile = { ...file, summary: 'AI summary not available for this file.' };
       setSelectedFile(updatedFile);
       setFiles(prev => prev.map(f => f.id === file.id ? updatedFile : f));
     } finally {
